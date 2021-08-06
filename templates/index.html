@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<h2>LIVE FEED MENU ITEM</h2>
+<h3>Add New Feed</h3>
+<h5>Choose Color</h5>
+<h5>Login Credentials</h5>
+<div class="login-code">
+	<form method="POST" id="nameform">
+		{% csrf_token %}
+		<input type="text" id="fname" name="Platfrom" placeholder="Platfrom"><br><br>
+	    <input type="text" id="lname" name="Group" placeholder="Group"><br><br>
+	    <input type="text" id="fname" name="firstname" placeholder="User Name"><br><br>
+	    <input type="Password" id="lname" name="Password" placeholder="Password"><br><br>
+	    <button>Submit</button>
+	
+</div>
+<br>
+<div class="current-feed">
+	<input type="text"  name="firstname" placeholder="Nagatar" readonly>
+<label class="switch">
+  <input type="checkbox" id="togBtn" name="Nagatar" value="Nagatar" >
+ <div class="slider round"></div>
+ </label><br>
+ 
+<input type="text"  name="RP" placeholder="RP" readonly>
+ <label class="switch">
+  <input type="checkbox" id="togBtn" name="RP" value="RP" >
+ <div class="slider round"></div>
+ </label><br>
+
+ 
+<input type="text"  name="year ago" placeholder="year ago" readonly>
+ <label class="switch">
+  <input type="checkbox" id="togBtn" name="year ago" value="year ago" >
+ <div class="slider round"></div>
+ </label><br>
+
+
+<input type="text"  name="ago" placeholder="❤️" readonly>
+ <label class="switch">
+  <input type="checkbox" id="togBtn" name="ago" value="❤️" >
+ <div class="slider round"></div>
+ </label><br>
+
+<input type="text"  name="democratically" placeholder="democratically" readonly>
+ <label class="switch">
+  <input type="checkbox" id="togBtn" name="democratically" value="democratically" >
+ <div class="slider round"></div>
+ </label><br>
+
+ <input type="text"  name="Candy" placeholder="Candy" readonly>
+ <label class="switch">
+  <input type="checkbox" id="togBtn" name="Candy" value="Candy" >
+ <div class="slider round"></div>
+ </label><br>
+
+ <input type="text"  name="Kansas" placeholder="Kansas" readonly>
+ <label class="switch">
+  <input type="checkbox" id="togBtn" name="Kansas" value="❤️" >
+ <div class="slider round"></div>
+ </label><br>
+{% for names in mess %}
+                                {{names}}
+                                 {% endfor %}
+ </form>
+</div>
+
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+  var ckbox = $("input[name='Nagatar']");
+  var chkId = '';
+  $('input').on('click', function() {
+    
+    if (ckbox.is(':checked')) {
+      $("input[name='Nagatar']:checked").each ( function() {
+   			chkId = $(this).val() + ",";
+        chkId = chkId.slice(0, -1);
+ 	  });
+       
+       alert ( $(this).val() ); // return all values of checkboxes checked
+      
+    }     
+  });
+});
+
+
+
+</script>
+</html>
+

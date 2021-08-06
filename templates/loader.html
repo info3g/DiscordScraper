@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Discord</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../static/css/style.css">
+</head>
+
+<body>
+
+<div class="loader" id="foo"></div>
+	<section id="Myid" class="feed_sec">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-3">
+					<div class="box-big scroll">
+						<h3>Live Feed</h3>
+						<div class="feed-box">
+							{% for user,part_one,part_two,part_three in matching %} 
+							{% if user in mess %}
+							<h5>{{user}}</h5> 
+							{% endif %}
+							<div class="feed-text-1">
+								<p><a href="/?info={{part_one}}{{part_two}}{{part_three}}">{{part_one}}<mark> {{part_two}}</mark> {{part_three}}</a></p>
+							</div>
+						
+							{% endfor %}
+						</div>
+						<!-- <div class="feed-box">
+							<h5><strong>Discord</strong> - Isla Elsaa (Today 8:30am)</h5>
+							<div class="feed-text-2">
+								<p>Lorem Ipsum is simply dummy <mark>text</mark> of the printing and typesetting
+									industry.</p>
+								<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+									Ipsum has been the industry's standard <mark>dummy</mark> text ever since the 1500s,
+								</p>
+							</div>
+						</div> -->
+						<!-- div class="feed-box">
+							<h5><strong>Discord</strong> - Isla Elsaa (Today 8:30am)</h5>
+							<div class="feed-text-3">
+								<p>Lorem Ipsum is simply dummy <mark>text</mark> of the printing and typesetting
+									industry.</p>
+								<p>Lorem Ipsum is simply dummy text of the printing <mark>and</mark> typesetting
+									industry. Lorem
+									Ipsum has been the industry's standard dummy text ever since the 1500s,</p>
+							</div>
+						</div> -->
+					</div>
+				</div>
+				<div class="col-md-3 plus-botton">
+						<div class="box-big scroll"> 
+							<h3>Search For</h3>
+							<div class="search-bar">
+								<input type="text" placeholder="Serach">
+								<button>
+									<img src="../static/images/plus.png" alt="" id="addRow">
+								</button>
+						</div>
+						
+						<form method="POST" enctype="multipart/form-data">{% csrf_token %}
+						<div id="newRow"></div>
+
+						{% for value in res%}
+						{% if 'Nagatar' in value%}
+						{% elif 'RP' in value%}
+						{% elif 'years ago' in value%}
+						{% elif '❤️' in value%}
+						{% elif 'democratically' in value%}
+						{% elif 'Candy' in value%}
+						{% elif 'Kansas' in value%}						
+						{% else %}
+							<div class="input-added" id="inputFormRow">
+								<button>
+									<img src="../static/images/negative.png" alt="" id="removeRow">
+								</button>
+								<input type="text" name="Nagatar" class="input" placeholder="{{value}}">
+								<div class="button r" id="button-1">
+									<input type="checkbox" name="Nagatar" name="Kansas" class="checkbox" value="{{value}}" checked>
+									<div class="knobs"></div>
+									<div class="layer"></div>
+								</div>
+							</div>{% endif %}
+						{% endfor %}
+
+						<div class="input-added" id="inputFormRow">
+							<button>
+								<img src="../static/images/negative.png" alt="" id="removeRow">
+							</button>
+							<input type="text" name="Nagatar" class="input" placeholder="Nagatar">
+							<div class="button r" id="button-1">{% if 'Nagatar' in res %}
+								<input type="checkbox" name="Nagatar" class="checkbox" value="Nagatar" checked>
+								<div class="knobs"></div>
+								<div class="layer"></div>{% else %}
+								<input type="checkbox" name="Nagatar" class="checkbox" value="Nagatar">
+								<div class="knobs"></div>
+								<div class="layer"></div>{% endif %}</div>
+						</div>
+						<div class="input-added" id="inputFormRow">
+							<button>
+								<img src="../static/images/negative.png" alt="" id="removeRow">
+							</button>
+							<input type="text" name="RP" class="input" placeholder="RP">
+							<div class="button r" id="button-1">{% if 'RP' in res %}
+								<input type="checkbox" name="RP" class="checkbox" value="RP" checked>
+								<div class="knobs"></div>
+								<div class="layer"></div>{% else %}
+								<input type="checkbox" name="RP" class="checkbox" value="RP">
+								<div class="knobs"></div>
+								<div class="layer"></div>{% endif %}
+							</div>
+						</div>
+						
+
+						<div class="input-added" id="inputFormRow">
+							<button>
+								<img src="../static/images/negative.png" alt="" id="removeRow">
+							</button>
+							<input type="text" name="years" class="input" placeholder="years ago">
+							<div class="button r" id="button-1">{% if 'years ago' in res %}
+								<input type="checkbox" name="years" class="checkbox" value="years ago" checked>
+								<div class="knobs"></div>
+								<div class="layer"></div>{% else %}
+								<input type="checkbox" name="years" class="checkbox" value="years ago">
+								<div class="knobs"></div>
+								<div class="layer"></div>{% endif %}
+							</div>
+						</div>
+						<div class="input-added" id="inputFormRow">
+							<button>
+								<img src="../static/images/negative.png" alt="" id="removeRow">
+							</button>
+							<input type="text" name="dil" class="input" placeholder="❤️">
+							<div class="button r" id="button-1">{% if 'symbol' in res %}
+								<input type="checkbox" name="dil" class="checkbox" value="❤️" checked>
+								<div class="knobs"></div>
+								<div class="layer"></div>{% else %}
+								<input type="checkbox" name="dil" class="checkbox" value="❤️">
+								<div class="knobs"></div>
+								<div class="layer"></div>{% endif %}
+							</div>
+						</div>
+						<div class="input-added" id="inputFormRow">
+							<button>
+								<img src="../static/images/negative.png" alt="" id="removeRow">
+							</button>
+							<input type="text" name="democratically" class="input" placeholder="democratically">
+							<div class="button r" id="button-1">{% if 'democratically' in res %}
+								<input type="checkbox" name="democratically" class="checkbox" value="democratically" checked>
+								<div class="knobs"></div>
+								<div class="layer"></div>{% else %}
+								<input type="checkbox" name="democratically" class="checkbox" value="democratically">
+								<div class="knobs"></div>
+								<div class="layer"></div>{% endif %}
+							</div>
+						</div>
+						<div class="input-added" id="inputFormRow">
+							<button>
+								<img src="../static/images/negative.png" alt="" id="removeRow">
+							</button>
+							<input type="text" name="Candy" class="input" placeholder="Candy">
+							<div class="button r" id="button-1">{% if 'Candy' in res %}
+								<input type="checkbox" name="Candy" class="checkbox" value="Candy" checked>
+								<div class="knobs"></div>
+								<div class="layer"></div>{% else %}
+								<input type="checkbox" name="Candy" class="checkbox" value="Candy">
+								<div class="knobs"></div>
+								<div class="layer"></div>{% endif %}
+							</div>
+						</div>
+						<div class="input-added" id="inputFormRow">
+							<button>
+								<img src="../static/images/negative.png" alt="" id="removeRow">
+							</button>
+							<input type="text" name="Kansas" class="input" placeholder="Kansas">
+							<div class="button r" id="button-1">{% if 'Kansas' in res %}
+								<input type="checkbox" name="Kansas" class="checkbox" value="Kansas" checked>
+								<div class="knobs"></div>
+								<div class="layer"></div>{% else %}
+								<input type="checkbox" name="Kansas" class="checkbox" value="Kansas">
+								<div class="knobs"></div>
+								<div class="layer"></div>{% endif %}
+							</div>
+						</div>
+				</div>
+
+			</div>
+			<div class="col-md-3">
+				<div class="box-big-tabs green-tab">
+					<div class="tabs-box">
+						<p>{{ss}} Results</p>
+						<ul class="nav nav-pills">
+						  <li class="nav-item">
+						    <a class="nav-link active" data-toggle="pill" href="#Recent">Recent</a>
+						  </li>
+						  <li class="nav-item">
+						    <a class="nav-link" data-toggle="pill" href="#Relevant">Relevant</a>
+						  </li>
+						</ul>
+					</div>
+					<div class="content scroll">
+						<div class="tab-content">
+						  <div class="tab-pane container active" id="Recent">
+						  	{% for user, data_text in all_chat %}
+						  		<p>{{user}}  <br>
+						  		{{data_text}}</p>
+						  			
+						  		{% endfor %}
+						  	
+						  </div>
+						  <div class="tab-pane container fade" id="Relevant">...</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3">
+					<div class="box-big-tabs purple-tab">
+					<div class="tabs-box">
+						<p>{{ss}} Results</p>
+						<ul class="nav nav-pills">
+						  <li class="nav-item">
+						    <a class="nav-link active" data-toggle="pill" href="#Recent1">Recent</a>
+						  </li>
+						  <li class="nav-item">
+						    <a class="nav-link" data-toggle="pill" href="#Relevant1">Relevant</a>
+						  </li>
+						</ul>
+					</div>
+					<div class="content scroll">
+						<div class="tab-content">
+						  <div >
+						{% for user, data_text in all_chat %}
+						  		<p>{{user}}</p>
+						  		<p>{{data_text}}</p>
+						  		{% endfor %}
+						</div>
+						  <div class="tab-pane" id="Relevant">Dummy Text</div>
+						</div>
+					</div>
+				</div>
+				</div>
+
+		</div>
+
+		<div class="row">
+			<div class="col-md-3">
+				<div class="box">
+					<h3>Add New Feed</h3>
+					<div class="color-form-box">
+						<div class="color-form">
+							<label>Login Credentials</label>
+							<input type="text" class="formcontrol" name="Platform" placeholder="Platform" required>
+							<input type="text" class="formcontrol" name="Group" placeholder="Group" required>
+							<input type="text" class="formcontrol" id="name" name="Users" placeholder="User Name" required>
+							<input type="password" class="formcontrol" id="name" name="Passward" placeholder="Passward" required>
+							<label for="">Favorites</label>
+							<select name="" id="">
+								<option value="">-Select-</option>
+								<option value="">-Select-</option>
+								<option value="">-Select-</option>
+							</select>
+						</div>
+						<div class="color-picker">
+							<label for="">Choose Colour</label>
+							<input type="text" name="color" class="inp" id="colorPicker" hidden>
+							<div class="palette" id="colorPalette"></div>
+						</div>
+					</div><br>
+					<button onclick="toggleText()">Submit</button>
+				</div>
+
+				</form>
+
+				<div class="box scroll">
+					<h3>Current Feed</h3>
+					
+					{% for mesages in current %} 
+					<div class="on-0ff-box ">
+						{% if mesages in current %}
+						<div class="button r" id="button-1">
+							<input type="checkbox" name="Serach" name="Kansas" class="checkbox" checked>
+							<div class="knobs"></div>
+							<div class="layer"></div>
+						</div>
+						{% endif %} 
+						<p class="color-1">{{mesages}}</p>						
+					</div>
+					{% endfor %}
+
+					<!-- {% for mesages in current %} 
+					<div class="on-0ff-box">
+						{% if 'ons' in on %}
+						 <div class="button r" id="button-1">
+							<input type="checkbox" name="Serach" name="Kansas" class="checkbox" value="message" checked>
+							<div class="knobs"></div>
+							<div class="layer"></div>
+						</div>
+						{% endif %} 
+						<p class="color-2">{{mesages}}</p>
+					</div>
+					{% endfor %} -->
+					 
+					
+					<!-- <div class="on-0ff-box">
+						 <div class="button r" id="button-1">
+							<input type="checkbox" name="Serach" name="Kansas" class="checkbox" value="message">
+							<div class="knobs"></div>
+							<div class="layer"></div>
+						</div>
+						<p class="color-3">DISCORD - sdn</p>
+					</div> -->
+			</div>
+		</div>
+		</div>
+	</section>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<script src="../static/js/main.js"></script>
+	<script src="../static/js/la_color_picker.js"></script>
+	<script type="text/javascript">
+		$("#addRow").click(function () {
+			var html = '';
+			html += '<div id="inputFormRow" class="input-added">';
+			html += '<button><img src="../static/images/negative.png" alt="" id="removeRow"></button>';
+			html += '<input type="text"  name="input_value_text" class="input">';
+			html += '<div class="button r" id="button-1">';
+			html += '<input type="checkbox" name="input_value" class="checkbox">';
+			html += '<div class="knobs"></div>';
+			html += '<div class="layer"></div>';
+			html += '</div>';
+			html += '</div>';
+			$('#newRow').append(html);
+		});
+		$(document).on('click', '#removeRow', function () {
+			$(this).closest('#inputFormRow').remove();
+		});
+		function toggleText(){
+		  var x = document.getElementById("Myid");
+		  if (x.style.display === "none") {
+		    x.style.display = "block";
+		  } else {
+		    x.style.display = "none";
+		    foo.style.display = "block";
+		  }
+		}
+
+	$(document).ready(function() {
+    $('#submit').click(function() {
+        if ($('#name').val().length === 0) {
+            alert('Enter your name!');
+        }
+    })
+});
+	</script>
+</body>
+
+</html>

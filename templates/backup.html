@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+
+<body>
+    <section class="feed_sec">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="box-big">
+                        <h3>Live Feed</h3>
+                        <div class="feed-box">
+                            {% for mesage,tets in matching %}
+                            {% if mesage in mess %}
+                            <h5>{{mesage}}</h5>                             
+                              {% endif %}
+                            <div class="feed-text-1">
+                                <p>
+                                {{tets}}
+                                </p>
+                            </div>
+                             {% endfor %}
+                        </div>
+                        <!-- <div class="feed-box">
+                            <h5><strong>Discord</strong> - Isla Elsaa (Today 8:30am)</h5>
+                            <div class="feed-text-2">
+                                <p>Lorem Ipsum is simply dummy <mark>text</mark> of the printing and typesetting
+                                    industry.</p>
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                    Ipsum has been the industry's standard <mark>dummy</mark> text ever since the 1500s,
+                                </p>
+                            </div>
+                        </div> -->
+                        <!-- div class="feed-box">
+                            <h5><strong>Discord</strong> - Isla Elsaa (Today 8:30am)</h5>
+                            <div class="feed-text-3">
+                                <p>Lorem Ipsum is simply dummy <mark>text</mark> of the printing and typesetting
+                                    industry.</p>
+                                <p>Lorem Ipsum is simply dummy text of the printing <mark>and</mark> typesetting
+                                    industry. Lorem
+                                    Ipsum has been the industry's standard dummy text ever since the 1500s,</p>
+                            </div>
+                        </div> -->
+                    </div>
+                    
+                 
+
+                    
+                </div>
+                <div class="col-md-3 plus-botton">
+                    <form method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                    <div class="box-big">
+                        <h3>Search For</h3>
+                        <<!-- div class="search-bar">
+                            <input type="text" placeholder="Serach">
+                            <button><img src="../static/images/plus.png" alt="" id="addRow"></button>
+                        </div> -->
+                        <div id="newRow"></div>
+                   
+                        <div class="input-added" id="inputFormRow">
+                            <button><img src="../static/images/negative.png" alt="" id="removeRow"></button>
+                            <input type="text" name="Nagatar" class="input" placeholder="Nagatar">
+                            <div class="button r" id="button-1">
+                                {% if 'ons' in on %}
+                                <input type="checkbox" name="Nagatar" name="Kansas" class="checkbox" value="Nagatar" checked>
+                                <div class="knobs"></div>
+                                <div class="layer"></div>
+                                {% else %}
+                                <input type="checkbox" name="Nagatar" name="Kansas" class="checkbox" value="Nagatar" >
+                                <div class="knobs"></div>
+                                <div class="layer"></div>
+                                {% endif %} 
+                            </div>
+                        </div>
+                        
+
+                        <div class="input-added" id="inputFormRow">
+                            <button><img src="../static/images/negative.png" alt="" id="removeRow"></button>
+                            <input type="text"  name="RP" class="input" placeholder="RP">
+                            <div class="button r" id="button-1">
+                                <input type="checkbox" name="RP" class="checkbox" value="RP">
+                                <div class="knobs"></div>
+                                <div class="layer"></div>
+                            </div>
+                        </div>
+                        
+
+                        <div class="input-added" id="inputFormRow">
+                            <button><img src="../static/images/negative.png" alt="" id="removeRow"></button>
+                            <input type="text"  name="years" class="input" placeholder="years ago" >
+                            <div class="button r" id="button-1">
+                                <input type="checkbox" name="years" class="checkbox" value="years ago">
+                                <div class="knobs"></div>
+                                <div class="layer"></div>
+                            </div>
+                        </div>
+
+                        <div class="input-added" id="inputFormRow">
+                            <button><img src="../static/images/negative.png" alt="" id="removeRow"></button>
+                            <input type="text"  name="dil" class="input" placeholder="❤️">
+                            <div class="button r" id="button-1">
+                                <input type="checkbox" name="dil" class="checkbox" value="❤️">
+                                <div class="knobs"></div>
+                                <div class="layer"></div>
+                            </div>
+                        </div>
+
+                        <div class="input-added" id="inputFormRow">
+                            <button><img src="../static/images/negative.png" alt="" id="removeRow"></button>
+                            <input type="text"  name="democratically" class="input" placeholder="democratically">
+                            <div class="button r" id="button-1">
+                                <input type="checkbox" name="democratically" class="checkbox" value="democratically">
+                                <div class="knobs"></div>
+                                <div class="layer"></div>
+                            </div>
+                        </div>
+
+                         <div class="input-added" id="inputFormRow">
+                            <button><img src="../static/images/negative.png" alt="" id="removeRow"></button>
+                            <input type="text"  name="Candy" class="input" placeholder="Candy">
+                            <div class="button r" id="button-1">
+                                <input type="checkbox" name="Candy" class="checkbox" value="Candy">
+                                <div class="knobs"></div>
+                                <div class="layer"></div>
+                            </div>
+                        </div>
+                        <div class="input-added" id="inputFormRow" >
+                            <button><img src="../static/images/negative.png" alt="" id="removeRow"></button>
+                            <input type="text"  name="Kansas" class="input" placeholder="Kansas">
+                            <div class="button r" id="button-1">
+                                <input type="checkbox" name="Kansas" class="checkbox" value="Kansas">
+                                <div class="knobs"></div>
+                                <div class="layer"></div>
+                            </div>
+                        </div>
+                        <button>save</button>
+                        
+                    </div>
+                    </form>
+                    <div class="search-bar">
+                            <input type="text" placeholder="Serach">
+                            <button><img src="../static/images/plus.png" alt="" id="addRow"></button>
+                        </div>
+                     
+                </div>
+               
+                
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                       <div class="box">
+                        <h3>Add New Feed</h3>
+                        <div class="color-form-box">
+                            <div class="color-form">
+                                <label>Login Credentials</label>
+                                <input type="text" class="formcontrol" name="Platform" placeholder="Platform">
+                                <input type="text" class="formcontrol" name="Group" placeholder="Group">
+                                <input type="text" class="formcontrol" name="Users" placeholder="User Name">
+                                <input type="text" class="formcontrol" name="Passward" placeholder="Passward">
+                                <label for="">Favorites</label>
+                                <select name="" id="">
+                                    <option value="">-Select-</option>
+                                    <option value="">-Select-</option>
+                                    <option value="">-Select-</option>
+                                </select>
+                            </div>
+                            <div class="color-picker">
+                                <label for="">Choose Colour</label>
+                                 <input type="text" name="color" class="inp" id="colorPicker" hidden>
+                                    <div class="palette" id="colorPalette"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="box">
+                            <h3>Current Feed</h3>
+                            <div class="on-0ff-box">
+                                {% for mesages in current %}
+                                    {% if 'ons' in on %}
+                                     <div class="button r" id="button-1">
+                                        <input type="checkbox" name="Serach" name="Kansas" class="checkbox" value="Nagatar" checked>
+                                        <div class="knobs"></div>
+                                        <div class="layer"></div>
+                                    </div>
+                                    <p class="color-1">{{mesages}}</p>
+                                    
+                                    {% endif %} 
+                                    {% endfor %}
+                                    <div class="button r" id="button-1">
+                                        <input type="checkbox" name="Serach" name="Kansas" class="checkbox" value="Nagatar">
+                                        <div class="knobs"></div>
+                                        <div class="layer"></div>
+                                    </div>
+                                    <p class="color-1"></p>
+                            </div>
+                             <!--  <div class="on-0ff-box">
+                                 <div class="button r" id="button-1">
+                                    <input type="checkbox" name="Serach" name="Kansas" class="checkbox" value="message">
+                                    <div class="knobs"></div>
+                                    <div class="layer"></div>
+                                </div>
+                                <p class="color-2">DISCORD - sdn</p>
+                            </div>
+                              <div class="on-0ff-box">
+                                 <div class="button r" id="button-1">
+                                    <input type="checkbox" name="Serach" name="Kansas" class="checkbox" value="message">
+                                    <div class="knobs"></div>
+                                    <div class="layer"></div>
+                                </div>
+                                <p class="color-3">DISCORD - sdn</p>
+                            </div> -->
+                        </div>
+                   
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="../static/js/main.js"></script>
+    <script src="../static/js/la_color_picker.js"></script>
+    <script type="text/javascript">
+        // add row
+        $("#addRow").click(function () {
+            var html = '';
+            html += '<div id="inputFormRow" class="input-added">';
+             html += '<button><img src="../static/images/negative.png" alt="" id="removeRow"></button>';
+            html += '<input type="text"  name="message" class="input" placeholder="Enter value">';
+            html += '<div class="button r" id="button-1">';
+            html += '<input type="checkbox" name="message" class="checkbox" >';
+            html += '<div class="knobs"></div>';
+            html += '<div class="layer"></div>';
+            html += '</div>';
+            html += '</div>';
+
+            $('#newRow').append(html);
+        });
+
+        // remove row
+        $(document).on('click', '#removeRow', function () {
+            $(this).closest('#inputFormRow').remove();
+        });
+    </script>
+</body>
+
+</html>

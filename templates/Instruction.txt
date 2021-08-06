@@ -1,0 +1,39 @@
+If python already exists on your system then skip step:1.
+
+Step:1 Firstly install python on your system. 
+	Please follow the link to download python and install.
+	https://www.python.org/downloads/
+	Please check the attached screenshot.
+	https://prnt.sc/1iaf22
+
+Step:2
+	Open the terminal in the project.
+	https://prnt.sc/1iahwb5
+
+Step:3
+	Please run this command in the terminal.
+	pip install --user -r requirements.txt
+	Please check the attached screenshot.
+	https://prnt.sc/1iajnyc
+	
+
+Step:4
+	Please run the next command in the terminal.
+	python manage.py runserver
+	Please check the attached screenshot.
+	https://prnt.sc/1iak5vo
+
+Step:5
+	Please open any web browser and type 127.0.0.1:8000 and then press enter.
+	Please check the attached screenshot.          
+	https://prnt.sc/1iapg4m
+
+Step:6          
+	Please select the search keyword and ON it.          
+	Please check the attached screenshot. 
+	https://prnt.sc/1iaqrpq
+	
+Step:7
+	Please enter the platform Discord , select the server name  ("jass's server") , enter the email address and password and press the submit button.
+	Please check the attached screenshot:
+	https://prnt.sc/1ib7spv
